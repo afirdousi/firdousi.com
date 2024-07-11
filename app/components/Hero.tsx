@@ -1,5 +1,15 @@
+import React from 'react';
 
-export const Hero = ({
+interface HeroProps {
+    highlight?: string;
+    subTitle?: string;
+    title?: string;
+    description?: string;
+    index?: boolean;
+    children?: React.ReactNode;
+}
+
+export const Hero: React.FC<HeroProps> = ({
     highlight,
     subTitle,
     title,
@@ -17,8 +27,7 @@ export const Hero = ({
             )}
             {title && <h1>{title}</h1>}
             {description && <p className="hero-description">{description}</p>}
-
-            {children && children}
+            {children}
         </header>
-    )
-}
+    );
+};
