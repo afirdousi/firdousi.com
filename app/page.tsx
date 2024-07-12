@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Heading } from "./components/Heading";
 import { Hero } from "./components/Hero";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
         <div className="hero-wrapper">
           <Hero title="Hey, I'm Anas" index>
             <p className="hero-description">
-              I&apos;m a software engineering turned engineering leader. Wanabe entrepreneur. I&apos;m passionate about building great products, teams, and communities.
+              I&apos;m a software engineering turned engineering leader. Wanabe entrepreneur. I&apos;m passionate about building great products and functional teams.
               I write about distributed systems, machine learning, leadership, and personal growth.
             </p>
             <p className="hero-description">
@@ -18,15 +19,28 @@ export default function Home() {
               <Link href="/me">about me</Link>.
             </p>
           </Hero>
-          <div className="decoration">
-            {/* <img
+          {/* <div className="decoration">
+            <img
               src="/ram.png"
               alt="RAM Ram"
               className="image hero-image"
               title="RAM Ram"
-            /> */}
-          </div>
+            />
+          </div> */}
         </div>
+      </div>
+
+      <div className="container">
+        <section className="segment first">
+          <Heading title="Articles" slug="/articles" buttonText="All Articles" description={undefined} />
+          {/* <Posts data={notes} newspaper /> */}
+        </section>
+
+        <section className="segment first">
+          <Heading title="Learnings" slug="/learnings" buttonText="All Learnings" description={undefined} />
+          {/* <Posts data={notes} newspaper /> */}
+        </section>
+
       </div>
     </div>
   );

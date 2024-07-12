@@ -84,7 +84,7 @@
   --content-width: 860px;
   --content-width--small: 560px;
   --content-width--medium: 700px;
-  --navbar-height-small: 60px;
+  --navbar-height-small: 40px;
 
   --primary-color: var(--indigo);
 }
@@ -313,7 +313,7 @@ h3 code {
 
 @media screen and (min-width: 700px) {
   main {
-    margin-top: 2rem;
+    margin-top: 8rem;
   }
 
   h2 {
@@ -590,7 +590,7 @@ a.button:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 2rem;
   width: 100%;
   max-width: 350px;
   margin-left: 0.5rem;
@@ -977,7 +977,7 @@ p.hero-description {
 @media screen and (min-width: 700px) {
   .hero-wrapper {
     padding-top: 0;
-    grid-template-columns: 4fr 2fr;
+    /* grid-template-columns: 4fr 2fr; */
     align-items: center;
     gap: 1.5rem;
   }
@@ -1002,7 +1002,7 @@ p.hero-description {
   }
 
   .hero.index {
-    padding: 5rem 0 3rem;
+    padding: 0 0 3rem;
   }
 }
 

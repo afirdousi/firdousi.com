@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 const mainNavItems = [
-    { url: '/notes', label: 'Notes' },
     { url: '/blog', label: 'Articles' },
+    { url: '/notes', label: 'Learnings' },
     { url: '/projects', label: 'Projects' },
     { url: '/me', label: 'Me?' },
 ];
