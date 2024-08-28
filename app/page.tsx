@@ -9,7 +9,7 @@ export default function Home() {
         <div className="hero-wrapper">
           <Hero title="Hey, I'm Anas" index>
             <p className="hero-description">
-              I&apos;m a software engineering turned engineering leader. Wanabe entrepreneur. I&apos;m passionate about building great products and functional teams.
+              I&apos;m a software engineer turned engineering leader. Wanabe entrepreneur. I&apos;m passionate about building great products and functional teams.
               I write about distributed systems, machine learning, leadership, and personal growth.
             </p>
             <p className="hero-description">
