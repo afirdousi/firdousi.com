@@ -1,8 +1,23 @@
 import Link from "next/link";
-import { Heading } from "./components/Heading";
 import { Hero } from "./components/Hero";
+import ItemList from "./components/ItemList";
 
 export default function Home() {
+  const articles = [
+    { title: 'Understanding JavaScript Closures', link: '/articles/js-closures' },
+    // { title: 'Understanding JavaScript Closures so if there is more content it will expand? that sounds wrid to me!!', link: '/articles/js-closures' },
+    { title: 'Getting Started with React', link: '/articles/react-intro' },
+    { title: 'Advanced CSS Techniques', link: '/articles/css-advanced' },
+    // Add more articles here...
+  ];
+
+  const learnings = [
+    { title: 'Leadership in Engineering', link: '/learnings/leadership' },
+    { title: 'Time Management Tips', link: '/learnings/time-management' },
+    { title: 'Growth Mindset', link: '/learnings/growth-mindset' },
+    // Add more learnings here...
+  ];
+
   return (
     <div id="layout" className="layout">
       <div className="container">
@@ -19,28 +34,28 @@ export default function Home() {
               <Link href="/me">about me</Link>.
             </p>
           </Hero>
-          {/* <div className="decoration">
-            <img
-              src="/ram.png"
-              alt="RAM Ram"
-              className="image hero-image"
-              title="RAM Ram"
-            />
-          </div> */}
         </div>
       </div>
 
       <div className="container">
         <section className="segment first">
-          <Heading title="Articles" slug="/articles" buttonText="All Articles" description={undefined} />
-          {/* <Posts data={notes} newspaper /> */}
+          <ItemList
+            title="Articles"
+            items={articles}
+            maxItemsToShow={3}
+            viewAllLink="/articles"
+          />
         </section>
 
         <section className="segment first">
-          <Heading title="Learnings" slug="/learnings" buttonText="All Learnings" description={undefined} />
-          {/* <Posts data={notes} newspaper /> */}
+          {/* <Heading title="Learnings" slug="/learnings" buttonText="All Learnings" description={undefined} /> */}
+          <ItemList
+            title="Learnings"
+            items={learnings}
+            maxItemsToShow={3}
+            viewAllLink="/learnings"
+          />
         </section>
-
       </div>
     </div>
   );

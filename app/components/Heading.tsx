@@ -13,7 +13,6 @@ export const Heading: React.FC<HeadingProps> = ({ title, buttonText, description
             <div className="title">{title}</div>
             {description && <div className="description">{description}</div>}
             {slug && (
-                // Apply the class directly to Link and remove <a>
                 <Link href={slug} className="button">
                     {buttonText}
                 </Link>

@@ -356,13 +356,16 @@ h5 {
 }
 
 h2.home-heading {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  border: 0;
-  padding: 0;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  border-bottom: 2px solid var(--gray-3);
+  /* Optional: make the border slightly thicker */
+
 }
 
 h2.home-heading .title {
@@ -370,6 +373,26 @@ h2.home-heading .title {
   margin-bottom: 0;
   font-family: var(--font-family-base);
   font-weight: 700;
+  text-align: left;
+  flex-grow: 1;
+}
+
+h2.home-heading .button {
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  background-color: var(--button-background-color);
+  border: 1px solid var(--button-border-color);
+  border-radius: var(--border-radius);
+  text-align: center;
+  text-decoration: none;
+  color: var(--font-color-base);
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+h2.home-heading .button:hover {
+  background-color: var(--button-border-color-hover);
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 700px) {
@@ -435,6 +458,7 @@ th:last-of-type {
 /* Containers */
 
 .container {
+  width: 100%;
   max-width: var(--content-width);
   padding: 0 1rem;
   margin-left: auto;
@@ -1565,4 +1589,23 @@ p.text-medium {
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-color);
   border-radius: 2px;
+}
+
+/* Styles for list items */
+/* Styles for the entire ItemList component */
+.item-list {
+  background-color: #dfdfdf;
+  border: 1px solid #d3d0d0;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  padding-top: 0;
+}
+
+/* Additional spacing inside the component */
+.item-list ul {
+  padding-left: 1rem;
+  /* Optional: adjust padding of the list */
+  margin-top: 1rem;
+  /* Space between the heading and the list */
 }
