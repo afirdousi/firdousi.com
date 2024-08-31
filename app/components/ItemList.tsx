@@ -14,15 +14,19 @@ const ItemList = ({ title, items, maxItemsToShow, viewAllLink }: ItemListProps) 
     return (
         <div className="item-list mb-8">
             <Heading title={title} slug={viewAllLink} buttonText={`View All ${title}`} />
-            <ul className="list-disc list-inside">
-                {displayedItems.map((item, index) => (
-                    <li key={index} className="mb-2">
-                        <Link href={item.link}>
-                            {item.title}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            {displayedItems.length > 0 ? (
+                <ul className="list-disc list-inside">
+                    {displayedItems.map((item, index) => (
+                        <li key={index} className="mb-2">
+                            <Link href={item.link}>
+                                {item.title}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p>Data not available</p>
+            )}
         </div>
     );
 };

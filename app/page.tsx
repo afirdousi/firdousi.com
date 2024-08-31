@@ -2,21 +2,14 @@ import Link from "next/link";
 import { Hero } from "./components/Hero";
 import ItemList from "./components/ItemList";
 
-export default function Home() {
-  const articles = [
-    { title: 'Understanding JavaScript Closures', link: '/articles/js-closures' },
-    // { title: 'Understanding JavaScript Closures so if there is more content it will expand? that sounds wrid to me!!', link: '/articles/js-closures' },
-    { title: 'Getting Started with React', link: '/articles/react-intro' },
-    { title: 'Advanced CSS Techniques', link: '/articles/css-advanced' },
-    // Add more articles here...
-  ];
+export default async function Home() {
+  // Fetch the data directly
+  console.log('Fetching data...');
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/data`);
+  const data = await res.json();
 
-  const learnings = [
-    { title: 'Leadership in Engineering', link: '/learnings/leadership' },
-    { title: 'Time Management Tips', link: '/learnings/time-management' },
-    { title: 'Growth Mindset', link: '/learnings/growth-mindset' },
-    // Add more learnings here...
-  ];
+  const { articles, learnings, projects } = data;
+  console.log(articles, learnings, projects);
 
   return (
     <div id="layout" className="layout">
@@ -41,19 +34,27 @@ export default function Home() {
         <section className="segment first">
           <ItemList
             title="Articles"
-            items={articles}
+            items={articles.map((article: { title: string, slug: string, tags: string[] }) => ({ title: article.title, link: `/articles/${article.slug}`, tags: article.tags }))}
             maxItemsToShow={3}
             viewAllLink="/articles"
           />
         </section>
 
         <section className="segment first">
-          {/* <Heading title="Learnings" slug="/learnings" buttonText="All Learnings" description={undefined} /> */}
           <ItemList
             title="Learnings"
-            items={learnings}
+            items={learnings.map((learning: { title: string, slug: string, tags: string[] }) => ({ title: learning.title, link: `/learnings/${learning.slug}`, tags: learning.tags }))}
             maxItemsToShow={3}
             viewAllLink="/learnings"
+          />
+        </section>
+
+        <section className="segment first">
+          <ItemList
+            title="Projects"
+            items={projects.map((project: { title: string, slug: string, tags: string[] }) => ({ title: project.title, link: `/projects/${project.slug}`, tags: project.tags }))}
+            maxItemsToShow={3}
+            viewAllLink="/projects"
           />
         </section>
       </div>
