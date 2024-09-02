@@ -53,7 +53,7 @@ export default async function Home() {
         <section className="segment first">
           <ItemList
             title="Articles"
-            items={articles.map((article: { title: string, slug: string, tags: string[] }) => ({ title: article.title, link: `/articles/${article.slug}`, tags: article.tags }))}
+            items={(articles || []).map((article: { title: string, slug: string, tags: string[] }) => ({ title: article.title, link: `/articles/${article.slug}`, tags: article.tags }))}
             maxItemsToShow={3}
             viewAllLink="/articles"
           />
@@ -62,7 +62,7 @@ export default async function Home() {
         <section className="segment first">
           <ItemList
             title="Learnings"
-            items={learnings.map((learning: { title: string, slug: string, tags: string[] }) => ({ title: learning.title, link: `/learnings/${learning.slug}`, tags: learning.tags }))}
+            items={(learnings || []).map((learning: { title: string, slug: string, tags: string[] }) => ({ title: learning.title, link: `/learnings/${learning.slug}`, tags: learning.tags }))}
             maxItemsToShow={3}
             viewAllLink="/learnings"
           />
@@ -71,7 +71,7 @@ export default async function Home() {
         <section className="segment first">
           <ItemList
             title="Projects"
-            items={projects.map((project: { title: string, slug: string, tags: string[] }) => ({ title: project.title, link: `/projects/${project.slug}`, tags: project.tags }))}
+            items={(projects || []).map((project: { title: string, slug: string, tags: string[] }) => ({ title: project.title, link: `/projects/${project.slug}`, tags: project.tags }))}
             maxItemsToShow={3}
             viewAllLink="/projects"
           />
