@@ -3,13 +3,32 @@ import { Hero } from "./components/Hero";
 import ItemList from "./components/ItemList";
 
 export default async function Home() {
-  // Fetch the data directly
-  console.log('Fetching data...');
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/data`);
-  const data = await res.json();
 
-  const { articles, learnings, projects } = data;
-  console.log(articles, learnings, projects);
+  let articles = [];
+  let learnings = [];
+  let projects = [];
+
+  if (process.env.NODE_ENV !== 'production') {
+    // Fetch the data directly during development
+    console.log('Fetching data...');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/data`);
+    const data = await res.json();
+    articles = data.articles;
+    learnings = data.learnings;
+    projects = data.projects;
+  } else {
+    // Provide mock data or skip the fetch during build
+    console.log('Skipping data fetch during build.');
+    articles = [
+      { title: 'Example Article', slug: 'example-article', tags: ['example'] },
+    ];
+    learnings = [
+      { title: 'Example Learning', slug: 'example-learning', tags: ['example'] },
+    ];
+    projects = [
+      { title: 'Example Project', slug: 'example-project', tags: ['example'] },
+    ];
+  }
 
   return (
     <div id="layout" className="layout">
