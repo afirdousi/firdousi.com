@@ -11,11 +11,12 @@ export default async function Home() {
   if (process.env.NODE_ENV === 'production') {
     // Fetch the data directly during development
     console.log('Fetching data...');
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/data`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/data`, { cache: 'no-store' });
     const data = await res.json();
     articles = data.articles;
     learnings = data.learnings;
     projects = data.projects;
+
   } else {
     // Provide mock data or skip the fetch during build
     console.log('Skipping data fetch during build.');
