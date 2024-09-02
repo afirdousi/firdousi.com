@@ -8,7 +8,7 @@ export default async function Home() {
   let learnings = [];
   let projects = [];
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV === 'production') {
     // Fetch the data directly during development
     console.log('Fetching data...');
     const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/data`);
