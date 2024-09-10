@@ -53,7 +53,7 @@
   --border-radius: 12px;
 
   /* Elements */
-  --background-color: var(--gray-2);
+  --background-color: var(--gray-05);
   --navbar-background-color: var(--gray-0);
   --card-background-color: var(--gray-0);
   --button-border-color-hover: var(--gray-5);
@@ -1597,19 +1597,111 @@ p.text-medium {
 
 /* Styles for list items */
 /* Styles for the entire ItemList component */
-.item-list {
-  background-color: #dfdfdf;
-  border: 1px solid #d3d0d0;
-  border-radius: 10px;
+.item-list-wrapper {
+  background-color: #ffffff;
   padding: 1rem;
+  border-radius: 10px;
+}
+
+.item-list {
+  background-color: #ffffff;
+  border: 1px solid #fff;
+
   margin-bottom: 1.5rem;
   padding-top: 0;
 }
 
 /* Additional spacing inside the component */
-.item-list ul {
-  padding-left: 0rem;
-  /* Optional: adjust padding of the list */
-  margin-top: 1rem;
-  /* Space between the heading and the list */
+.item-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.tag-chip {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+/* Example colors for specific tags */
+.tag-chip.distributed-computing {
+  background-color: #1579c5;
+}
+
+.tag-chip.llm {
+  background-color: #dcc00d;
+}
+
+.tag-chip.ml {
+  background-color: #ff7e22;
+}
+
+.tag-chip.ai {
+  background-color: #047052;
+}
+
+.tag-chip.active {
+  text-decoration: underline wavy;
+  text-underline-offset: 3px;
+}
+
+
+.tag-filters {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0 0 15px 0;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  padding: 14px 19px;
+  border: 1px solid #C1C1C1;
+  background-color: white;
+  border-radius: 10px;
+  transition: 0.2s;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.search-box:hover {
+  border-color: #AAAAAA;
+}
+
+.search-box:focus-within {
+  border-color: #8da612;
+  box-shadow: 0 0 0 5px rgba(190, 218, 5, 0.4);
+}
+
+input#search-input {
+  letter-spacing: 0.2px;
+  font-size: 1.2rem;
+  border: none;
+  color: #323232;
+  flex-grow: 1;
+  /* Allow input to grow */
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+/* Add more tag styles as needed */

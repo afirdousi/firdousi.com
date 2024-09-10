@@ -1,13 +1,13 @@
 import Link from 'next/link';
 
 const mainNavItems = [
-    { url: '/blog', label: 'Articles' },
-    { url: '/notes', label: 'Learnings' },
-    { url: '/projects', label: 'Projects' },
+    { url: '/articles?page=1', label: 'Articles' },
+    { url: '/learnings?page=1', label: 'Learnings' },
+    { url: '/projects?page=1', label: 'Projects' },
     { url: '/me', label: 'Me?' },
 ];
 
-export const Navigation = ({ }) => {
+export const Navigation = () => {
     return (
         <section className="navigation">
             <div className="container">
@@ -17,7 +17,7 @@ export const Navigation = ({ }) => {
                 <nav>
                     {mainNavItems.map((item) => (
                         <div className="nav-item-outer" key={item.url}>
-                            <Link href={item.url} target='_blank' key={item.url} passHref>
+                            <Link href={item.url} key={item.url}>
                                 <span>{item.label}</span>
                             </Link>
                         </div>
